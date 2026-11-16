@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#1D4ED8">
+
+    <title>Inscripción - FEJOBAES Concentración Decembrina 2026</title>
+
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="imgs/fejobaes_logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- ENCABEZADO -->
+        <header class="header">
+
+            <div class="header-decoration"></div>
+
+            <div class="header-content header-logos-layout">
+
+                <!-- LOGO IZQUIERDO -->
+                <div class="header-logo-container">
+                    <img src="imgs/Un nuevo yo en Cristo.png" alt="Un nuevo yo en Cristo" class="header-logo">
+                </div>
+
+                <!-- TEXTO CENTRAL -->
+                <div class="header-text-center">
+                    <h1>
+                        Concentración Decembrina 2026
+                    </h1>
+
+                    <div class="header-divider"></div>
+
+                    <p class="organization">
+                        FEJOBAES
+                    </p>
+
+                    <p class="header-description">
+                        Formulario de inscripción
+                    </p>
+                </div>
+
+                <!-- LOGO DERECHO -->
+                <div class="header-logo-container">
+                    <img src="imgs/Impacto.png" alt="Impacto" class="header-logo">
+                </div>
+
+            </div>
+
+            <div class="header-bottom">
+                <span></span>
+            </div>
+
+        </header>
+
+
+
+        <form id="formInscripcion" novalidate>
+
+
+            <!-- 1. DATOS PERSONALES -->
+            <section class="form-section">
+
+                <div class="section-header">
+
+                    <div class="section-number">01</div>
+
+                    <div>
+                        <h2>Datos personales</h2>
+                    </div>
+
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group full-width">
+                        <label for="nombre">Nombre completo</label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Ej. Juan Pérez López"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+
+                        <input
+                            type="number"
+                            id="edad"
+                            name="edad"
+                            min="1"
+                            placeholder="Tu edad"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="Ej. 6691234567"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="correo">Correo electrónico</label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="ejemplo@correo.com"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="talla">Talla de playera</label>
+
+                        <select id="talla" name="talla" required>
+                            <option value="">Selecciona una talla</option>
+                            <option value="XS">CH</option>
+                            <option value="S">M</option>
+                            <option value="M">G</option>
+                            <option value="L">EG</option>
+                        </select>
+                        <small>Si deseas una talla XXL tiene un costo adicional de <b>$30</b>. Pónte en contacto con nosotros:  <b>669 206 8290</b></small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 2. PROCEDENCIA -->
+            <section class="form-section">
+
+                <div class="section-header">
+
+                    <div class="section-number">02</div>
+
+                    <div>
+                        <h2>Datos de procedencia</h2>
+                    </div>
+
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="federacion">Federación</label>
+
+                        <select id="federacion" name="federacion" required>
+                            <option value="">Selecciona tu federación</option>
+                            <option value="FEJOBAES">FEJOBAES</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="zona">Zona</label>
+
+                        <select id="zona" name="zona" required>
+                            <option value="">Selecciona tu zona</option>
+                            <option value="Norte">Norte</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Sur">Sur</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="iglesia">Iglesia</label>
+
+                        <input
+                            type="text"
+                            id="iglesia"
+                            name="iglesia"
+                            placeholder="Nombre de tu iglesia"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 3. DOCUMENTACIÓN -->
+            <section class="form-section">
+
+                <div class="section-header">
+
+                    <div class="section-number">03</div>
+
+                    <div>
+                        <h2>Documentación y pago</h2>
+                    </div>
+
+                </div>
+
+                
+                <div class="form-group">
+
+                    <h4 for="carta">Carta de acreditación</h4>
+
+                    <div class="file-info">
+
+                        <p>
+                            La carta debe estar firmada por tu pastor,
+                            tu consejero y tu presidente de unión.
+                        </p>
+                    </div>
+
+                    <input
+                        type="file"
+                        id="carta"
+                        name="carta"
+                        accept=".pdf,.png,.jpg,.jpeg"
+                        required
+                    >
+
+                    <small>Formatos permitidos: PDF, PNG, JPG y JPEG. Máximo 20 MB.</small>
+
+                </div>
+
+                <br><br>
+                <div class="form-group">
+
+                    <h4 for="pago">Comprobante de pago</h4>
+
+                    <input
+                        type="file"
+                        id="pago"
+                        name="pago"
+                        accept=".pdf,.png,.jpg,.jpeg"
+                        required
+                    >
+
+                    <small>Formatos permitidos: PDF, PNG, JPG y JPEG. Máximo 20 MB.</small>
+
+                </div>
+
+            </section>
+
+
+            <!-- 4. TALLERES -->
+            <section class="form-section">
+
+                <div class="section-header">
+
+                    <div class="section-number">04</div>
+
+                    <div>
+                        <h2>Selección de talleres</h2>
+                    </div>
+
+                </div>
+
+                <div class="workshop-notice">
+                    Cada taller cuenta con un cupo limitado de 25 participantes.
+                </div>
+
+                <div id="listaTalleres">
+                    <!-- Los talleres se cargarán dinámicamente -->
+                </div>
+
+            </section>
+
+
+            <!-- MENSAJES -->
+            <div id="mensaje"></div>
+
+
+            <!-- ENVÍO -->
+            <div class="submit-container">
+
+                <button type="submit" class="btn-submit">
+                    <span>Enviar inscripción</span>
+                    <span class="submit-arrow">→</span>
+                </button>
+
+                <p class="submit-note">
+                    Verifica que todos tus datos sean correctos antes de enviar.
+                </p>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-logo-container">
+            <img src="imgs/fejobaes.png" alt="FEJOBAES" class="footer-logo">
+        </div>
+
+        <small style="color: aliceblue;">
+            Todos los derechos reservados.
+        </small>
+
+    </footer>
+
+    <!-- VENTANA MODAL DE ESTADO -->
+    <div id="modalEstado" class="modal-overlay">
+        <div class="modal-card">
+            <!-- Icono animado o spinner -->
+            <div id="modalIcono" class="modal-spinner"></div>
+            
+            <!-- Títulos y mensajes -->
+            <h2 id="modalTitulo">Procesando...</h2>
+            <p id="modalTexto">Por favor, espera un momento mientras registramos tu inscripción.</p>
+            
+            <!-- Botón para cerrar (inicialmente oculto) -->
+            <button id="btnCerrarModal" class="btn-modal-close" style="display: none;">Entendido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,841 @@
+@font-face {
+  font-family: "Perandory";
+  src: url("fonts/perandory-regular.woff2") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BirthstoneBounce";
+  src: url("fonts/BirthstoneBounce-Regular.woff2") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y RESET
+   ========================================================================== */
+:root {
+  --primary: #1d4ed8;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e40af;
+  --accent: #f59e0b;
+  --success: #10b981;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --transition: all 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("imgs/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.45;
+  z-index: -1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   2. CONTENEDOR PRINCIPAL
+   ========================================================================== */
+.container {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   3. ENCABEZADO (HEADER) Y LOGOTIPOS
+   ========================================================================== */
+.header {
+  background: linear-gradient(135deg, #395b81, #b3cfeb);
+  color: #e0cb76;
+  padding: 40px 24px;
+  text-align: center;
+  position: relative;
+  border-bottom: 4px solid var(--accent);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-logos-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.header-text-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.header-logo {
+  max-height: 155px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.header-content h1 {
+  font-size: 3.5rem;
+  font-weight: 200;
+  font-family: "Perandory", serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.header-divider {
+  height: 2px;
+  width: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 12px auto;
+}
+
+.organization {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.header-description {
+  font-size: 1.1rem;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==========================================================================
+   4. FORMULARIO Y GRID ADAPTABLE
+   ========================================================================== */
+form {
+  padding: 40px 24px;
+  max-width: 1400px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.form-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+}
+
+.section-number {
+  background: rgba(29, 78, 216, 0.08);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.section-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+.form-grid > *,
+#listaTalleres > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.full-width {
+  grid-column: span 4;
+}
+
+#edad {
+  grid-column: span 1;
+}
+
+#telefono {
+  grid-column: span 2;
+}
+
+.form-section:nth-of-type(3) .form-group {
+  grid-column: span 2;
+}
+
+/* ==========================================================================
+   5. COMPONENTES DE FORMULARIO E INPUTS
+   ========================================================================== */
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  min-width: 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #fafafa;
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
+}
+
+small {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+small b {
+  color: var(--primary-dark);
+}
+
+/* Bloques Informativos */
+.file-info,
+.workshop-notice {
+  background-color: #f1f5f9;
+  border-left: 4px solid var(--primary-light);
+  padding: 14px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.file-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.workshop-notice {
+  border-left-color: var(--accent);
+  color: #92400e;
+  background-color: #fffbeb;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+/* Estilo de Inputs de Archivo */
+input[type="file"] {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 12px;
+  background: #fafafa;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background: var(--primary-dark);
+}
+
+/* Botón de Envío */
+.submit-container {
+  text-align: center;
+  margin-top: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: auto;
+  min-width: 280px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.submit-arrow {
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.btn-submit:hover .submit-arrow {
+  transform: translateX(4px);
+}
+
+.submit-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 15px;
+}
+
+/* ==========================================================================
+   6. SECCIÓN TALLERES (DINÁMICOS DESDE SCRIPT.JS)
+   ========================================================================== */
+#listaTalleres {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+  width: 100%;
+  min-width: 0;
+}
+
+.taller-card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  transition: var(--transition);
+  display: flex;
+}
+
+.taller-card:hover:not(.agotado) {
+  border-color: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.08);
+  transform: translateY(-2px);
+}
+
+.taller-radio {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.taller-content {
+  width: 100%;
+  padding: 20px 20px 20px 54px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.taller-radio:checked + .taller-content {
+  background-color: rgba(29, 78, 216, 0.02);
+}
+
+.taller-radio:checked ~ .taller-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.taller-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.taller-top h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.taller-estado {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.taller-estado.disponible {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.taller-estado.agotado {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+.tallerista {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+.taller-descripcion {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.taller-cupos {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.taller-barra {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.taller-barra-progreso {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-light), var(--primary));
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}
+.taller-card.agotado {
+  background-color: #f8fafc;
+  opacity: 0.65;
+  border-color: var(--border);
+}
+.taller-card.agotado .taller-content {
+  cursor: not-allowed;
+}
+.taller-card.agotado .taller-barra-progreso {
+  background: #94a3b8;
+}
+/* ==========================================================================
+7. CONTENEDOR DE MENSAJES
+========================================================================== */
+#mensaje {
+  margin: 20px 0;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  border-left: 4px solid transparent;
+}
+#mensaje.info {
+  display: block;
+  background-color: #eff6ff;
+  color: #1e40af;
+  border-left-color: var(--primary-light);
+}
+#mensaje.error {
+  display: block;
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-left-color: #ef4444;
+}
+#mensaje.success {
+  display: block;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-left-color: var(--success);
+}
+/* ==========================================================================
+8. VENTANA MODAL DE FEEDBACK
+========================================================================== */
+.modal-overlay {
+  display: none;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+  z-index: 99999 !important;
+}
+.modal-overlay.active {
+  display: flex !important;
+  animation: fadeInModal 0.25s ease-out forwards;
+}
+.modal-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.modal-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 18px 0 10px 0;
+  color: #0f172a;
+}
+.modal-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.modal-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #1d4ed8;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+.modal-icon-success,
+.modal-icon-error {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.modal-icon-success {
+  background: #ecfdf5;
+  color: #10b981;
+}
+.modal-icon-error {
+  background: #fef2f2;
+  color: #ef4444;
+}
+.btn-modal-close {
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-modal-close:hover {
+  background: #1e40af;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ==========================================================================
+9. FOOTER Y LOGOTIPO
+========================================================================== */
+.footer {
+  width: 100%;
+  margin-top: auto;
+  background: linear-gradient(135deg, #395b81, #b3cfeb);
+  color: #e0cb76;
+  padding: 40px 24px;
+  text-align: center;
+  position: relative;
+  border-top: 4px solid var(--accent);
+}
+.footer-line {
+  display: none;
+}
+.footer-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.footer p {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.footer small {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 12px;
+}
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.footer-logo {
+  max-height: 100px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 2px white)
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.75))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.25))
+    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35));
+}
+.footer-logo:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+/* ==========================================================================
+10. BREAKPOINTS RESPONSIVOS (MEDIA QUERIES CONSOLIDADAS)
+========================================================================== */
+/* Computadoras Medianas / Tabletas en Horizontal */
+@media (max-width: 1024px) {
+  .form-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .full-width {
+    grid-column: span 3;
+  }
+  #telefono {
+    grid-column: span 2;
+  }
+}
+/* Tabletas en Vertical */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .full-width {
+    grid-column: span 2;
+  }
+  #telefono {
+    grid-column: span 2;
+  }
+  .form-section:nth-of-type(3) .form-group {
+    grid-column: span 2;
+  }
+  #listaTalleres {
+    grid-template-columns: 1fr;
+  }
+}
+/* Ajuste Compacto para Celulares */
+@media (max-width: 650px) {
+  .header {
+    padding: 20px 15px;
+  }
+  .header-logos-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .header-text-center {
+    grid-column: span 2;
+    order: 3;
+  }
+  .header-logo-container:nth-of-type(1) {
+    order: 1;
+    justify-content: flex-end;
+  }
+  .header-logo-container:nth-of-type(2) {
+    order: 2;
+    justify-content: flex-start;
+  }
+  .header-logo {
+    max-height: 45px;
+  }
+  .header-content h1 {
+    font-size: 2.2rem;
+    margin-top: 5px;
+  }
+  .header-description {
+    font-size: 0.95rem;
+  }
+}
+/* Celulares Inteligentes */
+@media (max-width: 480px) {
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .full-width,
+  #edad,
+  #telefono,
+  .form-section:nth-of-type(3) .form-group {
+    grid-column: span 1;
+  }
+  form {
+    padding: 20px 12px;
+  }
+  .form-section {
+    padding: 20px 15px;
+  }
+  .btn-submit {
+    width: 100%;
+  }
+  #listaTalleres {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .taller-content {
+    padding: 16px 16px 16px 48px;
+  }
+  .taller-radio {
+    top: 16px;
+    left: 16px;
+  }
+  .taller-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .header-logos-layout {
+    width: 100%;
+    min-width: 0;
+  }
+  .header-content {
+    min-width: 0;
+    width: 100%;
+  }
+  .footer {
+    width: 100%;
+    min-width: 0;
+  }
+}

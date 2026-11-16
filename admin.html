@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#395b81">
+
+    <title>Administración | Concentración Decembrina 2026</title>
+
+    <link rel="icon" type="image/png" href="imgs/fejobaes_logo.png">
+    <link rel="stylesheet" href="style-admin.css">
+</head>
+
+
+<!-- ==========================================
+     PANTALLA DE ACCESO ADMINISTRATIVO
+========================================== -->
+
+<div id="pantalla-acceso">
+    <div class="acceso-container">
+
+        <h2>Acceso panel administrativo</h2>
+
+        <p>
+            Introduce la palabra clave para continuar.
+        </p>
+
+        <form id="form-acceso">
+            <input
+                type="password"
+                id="clave-admin"
+                placeholder="Palabra clave"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">
+                Ingresar al panel
+            </button>
+
+            <span id="error-acceso"></span>
+        </form>
+
+    </div>
+</div>
+
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- =====================================
+             BARRA LATERAL
+        ====================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <img src="imgs/fejobaes.png" alt="FEJOBAES">
+
+                <div>
+                    <strong>FEJOBAES</strong>
+                    <span>Administración</span>
+                </div>
+
+            </div>
+
+            <div class="sidebar-event">
+
+                <span>ADMINISTRACIÓN</span>
+
+                <strong>Concentración Decembrina</strong>
+
+                <small>2026 · Un nuevo yo en Cristo</small>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <span class="nav-heading">PRINCIPAL</span>
+
+                <button class="nav-link active" data-section="resumen">
+
+                    <span class="nav-icon">▦</span>
+
+                    Resumen
+
+                </button>
+
+
+                <span class="nav-heading">GESTIÓN</span>
+
+                <button class="nav-link" data-section="participantes">
+
+                    <span class="nav-icon">♙</span>
+
+                    Participantes
+
+                </button>
+
+                <button class="nav-link" data-section="talleres">
+
+                    <span class="nav-icon">▤</span>
+
+                    Talleres
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <a href="index.html">← Volver al sitio web</a>
+
+                <small>FEJOBAES © 2026</small>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             CONTENIDO PRINCIPAL
+        ====================================== -->
+
+        <main class="admin-main">
+
+
+            <!-- ENCABEZADO -->
+
+            <header class="admin-header">
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Abrir menú">
+
+                    ☰
+
+                </button>
+
+
+                <div class="header-title">
+
+                    <span>FEJOBAES / CONCENTRACIÓN DECEMBRINA</span>
+
+                    <h1 id="page-title">Resumen general</h1>
+
+                </div>
+
+
+                <div class="header-event">
+
+                    <span class="event-indicator"></span>
+
+                    Concentración 2026
+
+                </div>
+
+            </header>
+
+
+            <div class="admin-content">
+
+
+                <!-- =====================================
+                     SECCIÓN 1: RESUMEN
+                ====================================== -->
+
+                <section
+                    class="admin-section active"
+                    id="resumen">
+
+
+                    <div class="welcome-heading">
+
+                        <div>
+
+                            <span class="section-overline">
+                                PANEL DE CONTROL
+                            </span>
+
+                            <h2>Concentración Decembrina 2026</h2>
+
+                            <p>
+                                Aquí puedes consultar el estado general
+                                de las inscripciones y los talleres.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESTADÍSTICAS -->
+
+                    <div class="stats-grid">
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon blue">
+                                ♙
+                            </div>
+
+                            <div>
+
+                                <span>Jóvenes inscritos</span>
+
+                                <strong id="stat-participantes">—</strong>
+
+                                <small>Total de registros</small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon gold">
+                                ▤
+                            </div>
+
+                            <div>
+
+                                <span>Talleres disponibles</span>
+
+                                <strong id="stat-talleres">—</strong>
+
+                                <small>Total de talleres</small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>Lugares ocupados</span>
+
+                                <strong id="stat-ocupados">—</strong>
+
+                                <small>Jóvenes asignados</small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon gray">
+                                ○
+                            </div>
+
+                            <div>
+
+                                <span>Cupos disponibles</span>
+
+                                <strong id="stat-disponibles">—</strong>
+
+                                <small>Lugares restantes</small>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <!-- OCUPACIÓN GENERAL -->
+
+                    <article class="admin-card occupancy-card">
+
+                        <div class="card-heading">
+
+                            <div>
+
+                                <h3>Ocupación de los talleres</h3>
+
+                                <p>
+                                    Consulta cómo se encuentran
+                                    los talleres de la concentración.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="text-button"
+                                data-go="talleres">
+
+                                Ver talleres →
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            id="resumen-talleres"
+                            class="workshop-summary-list">
+
+                            <div class="empty-state">
+
+                                <span class="empty-icon">▤</span>
+
+                                <p>
+                                    La información de los talleres
+                                    aparecerá aquí.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- RESUMEN DE PARTICIPANTES -->
+
+                    <article class="admin-card">
+
+                        <div class="card-heading">
+
+                            <div>
+
+                                <h3>Participantes registrados</h3>
+
+                                <p>
+                                    Accede rápidamente al registro
+                                    de los jóvenes inscritos.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="text-button"
+                                data-go="participantes">
+
+                                Ver participantes →
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="dashboard-participants">
+
+                            <div class="dashboard-info">
+
+                                <span class="dashboard-info-icon">
+                                    ♙
+                                </span>
+
+                                <div>
+
+                                    <strong id="resumen-total-participantes">
+                                        —
+                                    </strong>
+
+                                    <span>
+                                        Registros en la concentración
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </section>
+
+
+
+                <!-- =====================================
+                     SECCIÓN 2: PARTICIPANTES
+                ====================================== -->
+
+                <section
+                    class="admin-section"
+                    id="participantes">
+
+
+                    <div class="section-intro">
+
+                        <div>
+
+                            <span class="section-overline">
+                                GESTIÓN DE INSCRIPCIONES
+                            </span>
+
+                            <h2>Participantes</h2>
+
+                            <p>
+                                Consulta la información de todos los
+                                jóvenes registrados en la concentración.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESUMEN DE PARTICIPANTES -->
+
+                    <div class="participants-overview">
+
+                        <div>
+
+                            <span>Total de inscritos</span>
+
+                            <strong id="total-inscritos">—</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Federaciones</span>
+
+                            <strong id="total-federaciones">—</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Zonas</span>
+
+                            <strong id="total-zonas">—</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TABLA DE PARTICIPANTES -->
+
+                    <article class="admin-card">
+
+
+                        <div class="table-toolbar">
+
+
+                            <div class="search-box">
+
+                                <span>⌕</span>
+
+                                <input
+                                    type="search"
+                                    id="buscar-participante"
+                                    placeholder="Buscar participante..."
+                                    autocomplete="off">
+
+                            </div>
+
+
+                            <div class="table-filters">
+
+                                <div class="admin-filter-group">
+                                    <select id="filtro-autorizado">
+                                        <option value="">Todos los participantes</option>
+                                        <option value="true">Autorizados</option>
+                                        <option value="false">Pendientes</option>
+                                    </select>
+                                </div>
+
+                                <select id="filtro-federacion">
+
+                                    <option value="">
+                                        Todas las federaciones
+                                    </option>
+
+                                </select>
+
+
+                                <select id="filtro-zona">
+
+                                    <option value="">
+                                        Todas las zonas
+                                    </option>
+
+                                </select>
+
+
+                                <select id="filtro-taller">
+
+                                    <option value="">
+                                        Todos los talleres
+                                    </option>
+
+                                </select>
+
+
+                            </div>
+
+
+                            <button
+                                class="btn-secondary"
+                                id="btn-recargar">
+
+                                ↻ Actualizar
+
+                            </button>
+
+
+                        </div>
+
+
+                        <div class="table-results-info">
+
+                            <span id="resultados-participantes">
+                                Mostrando participantes
+                            </span>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>Participante</th>
+
+                                        <th>Federación</th>
+
+                                        <th>Zona</th>
+
+                                        <th>Autorización</th>
+
+                                        <th>Taller</th>
+
+                                        <th>Contacto</th>
+
+                                        <th>Información</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="tabla-participantes">
+
+                                    <tr>
+
+                                        <td
+                                            colspan="6"
+                                            class="table-empty">
+
+                                            Los participantes aparecerán
+                                            aquí cuando conectemos los datos.
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+
+                        </div>
+
+
+                        <!-- PAGINACIÓN -->
+
+                        <div
+                            class="table-pagination"
+                            id="paginacion-participantes">
+
+                        </div>
+
+
+                    </article>
+
+
+                </section>
+
+
+
+                <!-- =====================================
+                     SECCIÓN 3: TALLERES
+                ====================================== -->
+
+                <section
+                    class="admin-section"
+                    id="talleres">
+
+
+                    <div class="section-intro">
+
+                        <div>
+
+                            <span class="section-overline">
+                                ORGANIZACIÓN Y SEGUIMIENTO
+                            </span>
+
+                            <h2>Talleres</h2>
+
+                            <p>
+                                Consulta la capacidad, disponibilidad
+                                y participantes de cada taller.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESTADÍSTICAS DE TALLERES -->
+
+                    <div class="workshops-overview">
+
+
+                        <div class="overview-card">
+
+                            <span>Total de talleres</span>
+
+                            <strong id="talleres-total">—</strong>
+
+                        </div>
+
+
+                        <div class="overview-card">
+
+                            <span>Talleres con cupo</span>
+
+                            <strong id="talleres-disponibles">—</strong>
+
+                        </div>
+
+
+                        <div class="overview-card">
+
+                            <span>Talleres llenos</span>
+
+                            <strong id="talleres-llenos">—</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- FILTROS DE TALLERES -->
+
+                    <div class="workshops-toolbar">
+
+                        <div class="search-box">
+
+                            <span>⌕</span>
+
+                            <input
+                                type="search"
+                                id="buscar-taller"
+                                placeholder="Buscar taller..."
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <select id="filtro-estado-taller">
+
+                            <option value="">
+                                Todos los talleres
+                            </option>
+
+                            <option value="disponible">
+                                Con cupos disponibles
+                            </option>
+
+                            <option value="lleno">
+                                Talleres llenos
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- TARJETAS DE TALLERES -->
+
+                    <div
+                        class="admin-workshops-grid"
+                        id="admin-talleres-container">
+
+
+                        <div class="empty-state">
+
+                            <span class="empty-icon">▤</span>
+
+                            <p>
+                                Los talleres aparecerán aquí
+                                cuando conectemos los datos.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         MODAL: INFORMACIÓN DEL PARTICIPANTE
+    ====================================== -->
+
+    <div
+        class="admin-modal"
+        id="modal-participante"
+        aria-hidden="true">
+
+
+        <div class="modal-overlay" data-close-modal></div>
+
+
+        <div
+            class="modal-container"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-participante-titulo">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-overline">
+                        EXPEDIENTE DEL PARTICIPANTE
+                    </span>
+
+                    <h2 id="modal-participante-titulo">
+                        Información del joven
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    data-close-modal
+                    aria-label="Cerrar">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="modal-body"
+                id="detalle-participante">
+
+
+                <!-- JAVASCRIPT INSERTARÁ AQUÍ
+                     LA INFORMACIÓN COMPLETA DEL JOVEN -->
+
+
+                <div class="empty-state">
+
+                    <p>
+                        Selecciona un participante para consultar
+                        su información.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn-secondary"
+                    data-close-modal>
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         MODAL: PARTICIPANTES DE UN TALLER
+    ====================================== -->
+
+    <div
+        class="admin-modal"
+        id="modal-taller"
+        aria-hidden="true">
+
+
+        <div class="modal-overlay" data-close-modal></div>
+
+
+        <div
+            class="modal-container"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-taller-titulo">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-overline">
+                        INFORMACIÓN DEL TALLER
+                    </span>
+
+                    <h2 id="modal-taller-titulo">
+                        Participantes inscritos
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    data-close-modal
+                    aria-label="Cerrar">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div
+                    id="detalle-taller">
+
+                    <!-- JAVASCRIPT INSERTARÁ AQUÍ
+                         LOS DATOS Y PARTICIPANTES DEL TALLER -->
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Participante</th>
+
+                                <th>Federación</th>
+
+                                <th>Zona</th>
+
+                                <th>Autorización</th>
+
+                                <th>Contacto</th>
+
+                                <th>Información</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="tabla-participantes-taller">
+
+                            <tr>
+
+                                <td
+                                    colspan="5"
+                                    class="table-empty">
+
+                                    Selecciona un taller para consultar
+                                    sus participantes.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn-secondary"
+                    data-close-modal>
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         ELEMENTOS GENERALES
+    ====================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebar-overlay">
+    </div>
+
+
+    <script src="script-admin.js"></script>
+
+</body>
+
+</html>
