@@ -1132,3 +1132,103 @@ body::before {
     }
 
 }
+
+/* Hace que abarque ambas columnas de concentracion-content */
+.invitado-especial {
+    grid-column: 1 / -1; 
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Misma tipografía serif y estilo que el título "UN NUEVO YO EN CRISTO" */
+.invitado-subtitulo {
+    font-family: inherit;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1f364d;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Tarjeta idéntica a tus .info-card pero a lo largo */
+.invitado-card {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    background-color: #f3f6f8;
+    border-radius: 10px;
+    border-left: 5px solid #1f364d; /* Borde izquierdo como tus tarjetas de arriba */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+}
+
+.invitado-foto {
+    flex-shrink: 0;
+}
+
+.invitado-foto img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.invitado-detalle {
+    flex: 1;
+}
+
+.invitado-detalle h4 {
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #1f364d;
+    margin: 0 0 0.3rem 0;
+}
+
+.invitado-rol {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a6580;
+    margin-bottom: 0.8rem;
+}
+
+.invitado-detalle p {
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #556575;
+    margin: 0;
+}
+
+.invitado-especial h3 {
+    font-family: 'Perandory', serif;
+
+    font-size: 2.8rem;
+    font-weight: normal;
+
+    color: var(--blue-header);
+
+    margin-bottom: 20px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    .invitado-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .invitado-subtitulo {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}

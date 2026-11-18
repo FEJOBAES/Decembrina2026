@@ -27,7 +27,7 @@ function abrirModalProcesando() {
     modalIcono.className = "modal-spinner";
     modalIcono.textContent = "";
     modalTitulo.textContent = "Procesando...";
-    modalTexto.textContent = "Por favor, espera un momento mientras registramos tu inscripción.";
+    modalTexto.textContent = "Por favor, espera un momento mientras registramos tu solicitud de inscripción.";
     btnCerrarModal.style.display = "none";
     modalEstado.classList.add("active");
 }
@@ -38,14 +38,14 @@ function actualizarModalResultado(exito, mensajePersonalizado) {
     if (exito) {
         modalIcono.className = "modal-icon-success";
         modalIcono.textContent = "✓";
-        modalTitulo.textContent = "¡Inscripción Exitosa!";
-        modalTexto.textContent = mensajePersonalizado || "Te has registrado correctamente en la Concentración Decembrina 2026.";
+        modalTitulo.textContent = "¡Solicitud de Inscripción Exitosa!";
+        modalTexto.textContent = mensajePersonalizado || "Revisaremos tu documentación y te avisaremos por correo cuando todo esté listo para tu inscripción en la Concentración Decembrina 2026.";
         btnCerrarModal.textContent = "Volver al inicio"; // Texto personalizado para el éxito
     } else {
         modalIcono.className = "modal-icon-error";
         modalIcono.textContent = "✕";
         modalTitulo.textContent = "Hubo un problema";
-        modalTexto.textContent = mensajePersonalizado || "No se pudo procesar tu registro. Por favor, inténtalo de nuevo.";
+        modalTexto.textContent = mensajePersonalizado || "No se pudo procesar tu registro. Por favor, inténtalo de nuevo. Si el error pesiste ponte en contacto con nosotros";
         btnCerrarModal.textContent = "Cerrar e intentar de nuevo"; // Texto para error
     }
     
@@ -161,10 +161,6 @@ function mostrarTalleres(talleres) {
         tallerista.className = "tallerista";
         tallerista.textContent = `${taller.tallerista || "Por confirmar"}`;
 
-        const descripcion = document.createElement("p");
-        descripcion.className = "taller-descripcion";
-        descripcion.textContent = taller.descripcion || "Sin descripción disponible.";
-
         const cupos = document.createElement("p");
         cupos.className = "taller-cupos";
         cupos.textContent = limite > 0 ? `${inscritos} de ${limite} participantes inscritos · ${disponibles} lugares disponibles` : "Cupo no especificado";
@@ -177,7 +173,7 @@ function mostrarTalleres(talleres) {
         progreso.style.width = `${porcentaje}%`;
 
         barra.appendChild(progreso);
-        label.append(encabezado, tallerista, descripcion, cupos, barra);
+        label.append(encabezado, tallerista, cupos, barra);
         contenedor.append(radio, label);
         listaTalleres.appendChild(contenedor);
     });

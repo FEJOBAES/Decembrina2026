@@ -143,12 +143,15 @@
 
                         <select id="talla" name="talla" required>
                             <option value="">Selecciona una talla</option>
-                            <option value="XS">CH</option>
-                            <option value="S">M</option>
-                            <option value="M">G</option>
-                            <option value="L">EG</option>
+                            <option value="CH">CH</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
                         </select>
-                        <small>Si deseas una talla XXL tiene un costo adicional de <b>$30</b>. Pónte en contacto con nosotros:  <b>669 206 8290</b></small>
+                        <small>Si deseas una talla XXL o XXXL tiene un costo adicional de <b>$30</b>. Por favor, agrégalos a tu inscripción. 
+                            Si tienes alguna duda pónte en contacto con nosotros:  <b>669 206 8290</b></small>
                     </div>
 
                 </div>
@@ -177,6 +180,7 @@
                         <select id="federacion" name="federacion" required>
                             <option value="">Selecciona tu federación</option>
                             <option value="FEJOBAES">FEJOBAES</option>
+                            <option value="Federación de Jóvenes Bautistas de Sonora">Federación de Jóvenes Bautistas de Sonora</option>
                         </select>
                     </div>
 
@@ -296,12 +300,43 @@
             <div id="mensaje"></div>
 
 
+            <!-- CONSENTIMIENTOS -->
+            <div class="registration-consents">
+
+                <label class="consent-item">
+                    <input type="checkbox" name="aceptaReglamento" value="true" required>
+
+                    <span class="consent-check"></span>
+
+                    <span class="consent-text">
+                        Declaro que he leído y acepto el
+                        <a href="/#reglamento"
+                        class="consent-link"
+                        target="_blank">
+                            reglamento de la concentración
+                        </a>,
+                        y me comprometo a cumplir con todas sus disposiciones.
+                    </span>
+                </label>
+
+                <label class="consent-item">
+                    <input type="checkbox" name="autorizaContacto" value="true" required>
+
+                    <span class="consent-check"></span>
+
+                    <span class="consent-text">
+                        Autorizo a FEJOBAES a comunicarse conmigo a través de los medios de contacto que he proporcionado, 
+                        para compartir información relacionada con la concentración.
+                    </span>
+                </label>
+
+            </div>
+
             <!-- ENVÍO -->
             <div class="submit-container">
 
                 <button type="submit" class="btn-submit">
                     <span>Enviar inscripción</span>
-                    <span class="submit-arrow">→</span>
                 </button>
 
                 <p class="submit-note">
@@ -335,7 +370,7 @@
             
             <!-- Títulos y mensajes -->
             <h2 id="modalTitulo">Procesando...</h2>
-            <p id="modalTexto">Por favor, espera un momento mientras registramos tu inscripción.</p>
+            <p id="modalTexto">Por favor, espera un momento mientras registramos tu solicitud de inscripción.</p>
             
             <!-- Botón para cerrar (inicialmente oculto) -->
             <button id="btnCerrarModal" class="btn-modal-close" style="display: none;">Entendido</button>

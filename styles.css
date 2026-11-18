@@ -839,3 +839,122 @@ input[type="file"]::-webkit-file-upload-button:hover {
     min-width: 0;
   }
 }
+
+/* =========================================================
+   CONSENTIMIENTOS DE INSCRIPCIÓN
+   ========================================================= */
+
+.registration-consents {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.consent-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding: 17px 19px;
+
+    background: #f7f9fc;
+    border: 1px solid #e1e7ef;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.consent-item:hover {
+    background: #f0f5fa;
+    border-color: #b8c9dc;
+}
+
+/* Ocultar checkbox original */
+
+.consent-item input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+/* Checkbox personalizado */
+
+.consent-check {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    margin-top: 1px;
+
+    background: #fff;
+    border: 1.5px solid #aebbc9;
+    border-radius: 5px;
+
+    transition: all .2s ease;
+}
+
+/* Estado seleccionado */
+
+.consent-item input:checked + .consent-check {
+    background: #1a4480;
+    border-color: #1a4480;
+}
+
+.consent-item input:checked + .consent-check::after {
+    content: "";
+
+    display: block;
+    width: 5px;
+    height: 10px;
+
+    margin: 2px 0 0 6px;
+
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+
+    transform: rotate(45deg);
+}
+
+/* Accesibilidad con teclado */
+
+.consent-item input:focus-visible + .consent-check {
+    outline: 3px solid rgba(26, 68, 128, .2);
+    outline-offset: 3px;
+}
+
+/* Texto */
+
+.consent-text {
+    color: #435166;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* Etiqueta obligatorio */
+
+.required-label {
+    display: inline-block;
+    margin-left: 5px;
+
+    color: #1a4480;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.consent-link {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color .2s ease;
+}
+
+.consent-link:hover {
+    color: var(--accent);
+}
